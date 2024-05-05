@@ -36,6 +36,12 @@
                  <span class="text-danger">{{$errors->first('password')}}</span>    
                  @endif
                  <div class="form-group row">
+                    <label class="col-md-4">Confirm Password</label>
+                    <div class="col-md-8">
+                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Your Password" >
+                    </div>
+                 </div>
+                 <div class="form-group row">
                     <div class="col-md-8">
                         <input type="submit" value="Submit"  class="btn btn-success"><br/>
                     </div>

@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::resource("/employee",employeesController::class);
-Route::get('/search',[SearchController::class , 'search'])->name('search');
+Route::middleware(['auth'])->group(function (){
+    Route::resource('/employee',employeesController::class);
+    Route::get('/search',[SearchController::class , 'search'])->name('search');
+});
 Route::get('login',[AuthController::class , 'index'])->name('login');
 Route::get('registration',[AuthController::class , 'registration'])->name('registration');
 Route::POST('post-registration',[AuthController::class , 'postRegistration'])->name('registration.post');
